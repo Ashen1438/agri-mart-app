@@ -68,6 +68,7 @@ class _CartScreenState extends State<CartScreen> {
 
   Future<void> _placeOrder() async {
     try {
+      Get.toNamed('/user_panel/payment');
       User? user = FirebaseAuth.instance.currentUser;
       if (user == null) {
         Get.snackbar("Error", "User is not logged in!");
@@ -96,7 +97,7 @@ class _CartScreenState extends State<CartScreen> {
       await FirebaseFirestore.instance.collection('orders').add(orderData);
 
       Get.snackbar("Success", "Order placed successfully!");
-      Get.toNamed('/user_panel/order_confirmation');
+      Get.toNamed('/user_panel/payment');
     } catch (error) {
       Get.snackbar("Error", "Failed to place order: $error");
     }
