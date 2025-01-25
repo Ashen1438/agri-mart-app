@@ -73,6 +73,7 @@ class OrderConfirmationScreen extends StatelessWidget {
                 // Track Order Button
                 ElevatedButton(
                   onPressed: () {
+                    Get.toNamed('/user_panel/odertrack');
                     // Navigate to Track Order screen
                   },
                   style: ElevatedButton.styleFrom(

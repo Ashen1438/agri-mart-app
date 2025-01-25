@@ -9,6 +9,7 @@ import 'package:agri_mart/screens/user_panel/home.dart';
 import 'package:agri_mart/screens/user_panel/invoice_screen.dart';
 import 'package:agri_mart/screens/user_panel/message_section.dart';
 import 'package:agri_mart/screens/user_panel/order_confirmation_screen.dart';
+import 'package:agri_mart/screens/user_panel/order_tracking_screen.dart';
 import 'package:agri_mart/screens/user_panel/others_screen.dart';
 import 'package:agri_mart/screens/user_panel/payment_screen.dart';
 import 'package:agri_mart/screens/user_panel/product_screen.dart';
@@ -51,5 +52,6 @@ class RouterClass {
         GetPage(
             name: '/user_panel/invoice_screen', page: () => InvoiceScreen()),
         GetPage(name: '/user_panel/payment', page: () => PaymentScreen()),
+        GetPage(name: '/user_panel/odertrack', page: () => OrderTrackingScreen()),
       ];
 }
