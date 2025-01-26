@@ -25,14 +25,14 @@ class Home extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CustomAppBar(),
+                const CustomAppBar(),
                 SizedBox( height: screenHeight * 0.05,),
                 // Categories Section
                 const Category(),
                 SizedBox(height: screenHeight*0.02),
                 
                 // Today's Price Section
-                TodayPrice(),
+                const TodayPrice(),
                 SizedBox(height: screenHeight*0.02),
                 
                 // Best Sales Section

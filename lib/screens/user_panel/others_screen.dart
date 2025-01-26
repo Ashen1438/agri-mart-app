@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class OthersScreen extends StatefulWidget {
+  const OthersScreen({super.key});
+
   @override
   State<OthersScreen> createState() => _OthersScreenState();
 }
@@ -111,11 +113,11 @@ class ProductCard extends StatelessWidget {
   final String price;
 
   const ProductCard({
-    Key? key,
+    super.key,
     required this.imageUrl,
     required this.productName,
     required this.price,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ChatScreen extends StatefulWidget {
+  const ChatScreen({super.key});
+
   @override
   _ChatScreenState createState() => _ChatScreenState();
 }
@@ -56,12 +58,12 @@ class _ChatScreenState extends State<ChatScreen> {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 top: 90,
                 left: 0,
                 right: 0,
                 child: Center(
-                  child: const Text(
+                  child: Text(
                     'Conversation One',
                     style: TextStyle(
                       fontSize: 20,
@@ -89,8 +91,8 @@ class _ChatScreenState extends State<ChatScreen> {
                     decoration: BoxDecoration(
                       color: isSender ? Colors.green : Colors.grey.shade200,
                       borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(12),
-                        topRight: Radius.circular(12),
+                        topLeft: const Radius.circular(12),
+                        topRight: const Radius.circular(12),
                         bottomLeft: Radius.circular(isSender ? 12 : 0),
                         bottomRight: Radius.circular(isSender ? 0 : 12),
                       ),
@@ -115,7 +117,7 @@ class _ChatScreenState extends State<ChatScreen> {
               boxShadow: [
                 BoxShadow(
                   color: Colors.grey.shade300,
-                  offset: Offset(0, -1),
+                  offset: const Offset(0, -1),
                   blurRadius: 4,
                 ),
               ],
@@ -143,9 +145,9 @@ class _ChatScreenState extends State<ChatScreen> {
                 const SizedBox(width: 8),
                 GestureDetector(
                   onTap: _sendMessage,
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                     backgroundColor: Colors.green,
-                    child: const Icon(Icons.send, color: Colors.white),
+                    child: Icon(Icons.send, color: Colors.white),
                   ),
                 ),
               ],

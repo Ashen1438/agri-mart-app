@@ -34,7 +34,7 @@ class OthersSection extends StatelessWidget {
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               IconButton(
-                          icon:  CircleAvatar(
+                          icon:  const CircleAvatar(
                             backgroundColor: Colors.green,
                             child: Icon(Icons.arrow_forward, color: Colors.white),
                           ),

@@ -101,8 +101,8 @@ class OrderHistoryCard extends StatelessWidget {
     required this.status,
     required this.amount,
     required this.onTrackOrder,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

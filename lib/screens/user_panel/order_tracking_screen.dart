@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class OrderTrackingScreen extends StatefulWidget {
+  const OrderTrackingScreen({super.key});
+
   @override
   State<OrderTrackingScreen> createState() => _OrderTrackingScreenState();
 }
@@ -11,19 +13,19 @@ class _OrderTrackingScreenState extends State<OrderTrackingScreen> {
 
   // Initial position for the map
   final LatLng _initialPosition =
-      LatLng(37.7749, -122.4194); // Example: San Francisco
+      const LatLng(37.7749, -122.4194); // Example: San Francisco
 
   // Example delivery route
   final List<LatLng> _deliveryRoute = [
-    LatLng(37.7749, -122.4194), // Start point
-    LatLng(37.7849, -122.4094), // Midpoint
-    LatLng(37.7949, -122.3994), // Destination
+    const LatLng(37.7749, -122.4194), // Start point
+    const LatLng(37.7849, -122.4094), // Midpoint
+    const LatLng(37.7949, -122.3994), // Destination
   ];
 
   Set<Polyline> _createRoute() {
     return {
       Polyline(
-        polylineId: PolylineId("delivery_route"),
+        polylineId: const PolylineId("delivery_route"),
         points: _deliveryRoute,
         color: Colors.green,
         width: 5,

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class TodaysPriceScreen extends StatefulWidget {
+  const TodaysPriceScreen({super.key});
+
   @override
   State<TodaysPriceScreen> createState() => _TodaysPriceScreenState();
 }
@@ -83,12 +85,12 @@ class ProductCard extends StatelessWidget {
   final VoidCallback onTap;
 
   const ProductCard({
-    Key? key,
+    super.key,
     required this.imageUrl,
     required this.productName,
     required this.price,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -124,11 +126,11 @@ class ProductDetailScreen extends StatelessWidget {
   final String imageUrl;
 
   const ProductDetailScreen({
-    Key? key,
+    super.key,
     required this.productName,
     required this.price,
     required this.imageUrl,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

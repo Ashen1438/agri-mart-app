@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
 class PaymentScreen extends StatefulWidget {
+  const PaymentScreen({super.key});
+
   @override
   State<PaymentScreen> createState() => _PaymentScreenState();
 }
@@ -19,7 +21,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
             children: [
               Stack(
                 children: [
-                  BgEllipse(),
+                  const BgEllipse(),
                   Positioned(
                       top: 50,
                       left: 20,
@@ -38,7 +40,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     right: 0,
                     child: Column(
                       children: [
-                        Text(
+                        const Text(
                           "Payment Details",
                           style: TextStyle(
                             fontSize: 25,
@@ -147,7 +149,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             children: [
                               ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                  minimumSize: Size(double.infinity * 0.5, 50),
+                                  minimumSize: const Size(double.infinity * 0.5, 50),
                                   backgroundColor: Colors.green,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(15),
@@ -167,7 +169,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                               SizedBox(height: screenHeight * 0.01),
                               ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                  minimumSize: Size(double.infinity * 0.5, 50),
+                                  minimumSize: const Size(double.infinity * 0.5, 50),
                                   backgroundColor: Colors.green,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(15),

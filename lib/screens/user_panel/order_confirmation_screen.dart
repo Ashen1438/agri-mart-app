@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
 class OrderConfirmationScreen extends StatelessWidget {
+  const OrderConfirmationScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
@@ -14,7 +16,7 @@ class OrderConfirmationScreen extends StatelessWidget {
           Stack(
             clipBehavior: Clip.none,
             children: [
-              BgEllipse(),
+              const BgEllipse(),
               Positioned(
                 top: 50,
                 left: 16,
@@ -41,10 +43,10 @@ class OrderConfirmationScreen extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 // Check Icon
-                CircleAvatar(
+                const CircleAvatar(
                   radius: 40,
                   backgroundColor: Colors.green,
-                  child: const Icon(
+                  child: Icon(
                     Icons.check,
                     size: 50,
                     color: Colors.white,

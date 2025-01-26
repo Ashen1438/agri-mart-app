@@ -22,6 +22,8 @@ class InvoiceScreen extends StatelessWidget {
     },
   ];
 
+   InvoiceScreen({super.key});
+
   double calculateTotalAmount() {
     return orderItems.fold(0, (sum, item) => sum + item['amount']);
   }
@@ -45,7 +47,7 @@ class InvoiceScreen extends StatelessWidget {
                       'assets/logo.png',
                       height: 100,
                     ),
-                    Column(
+                    const Column(
                       children: [
                         Text(
                           'agrimart@gmail.com',
@@ -63,12 +65,12 @@ class InvoiceScreen extends StatelessWidget {
                     )
                   ],
                 ),
-                Divider(
+                const Divider(
                   color: Colors.green,
                   thickness: 10,
                 ),
                 // Invoice Title
-                Text(
+                const Text(
                   'Invoice',
                   style: TextStyle(
                     fontSize: 24,
@@ -77,14 +79,14 @@ class InvoiceScreen extends StatelessWidget {
                 ),
                 SizedBox(height: screenHeight * 0.02),
                 // Invoice Details
-                Row(
+                const Row(
                   children: [
                     Text('Invoice Date: ',
                         style: TextStyle(fontWeight: FontWeight.bold)),
                     Text('March 01, 2025'),
                   ],
                 ),
-                Row(
+                const Row(
                   children: [
                     Text('Invoice Number: ',
                         style: TextStyle(fontWeight: FontWeight.bold)),
@@ -92,21 +94,21 @@ class InvoiceScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: screenHeight * 0.02),
-                Row(
+                const Row(
                   children: [
                     Text('Client Name: ',
                         style: TextStyle(fontWeight: FontWeight.bold)),
                     Text(' Ashen Eranga'),
                   ],
                 ),
-                Row(
+                const Row(
                   children: [
                     Text('Client Address:',
                         style: TextStyle(fontWeight: FontWeight.bold)),
                     Text(' Passara Road, Badulla'),
                   ],
                 ),
-                Row(
+                const Row(
                   children: [
                     Text('Client Contact:',
                         style: TextStyle(fontWeight: FontWeight.bold)),
@@ -117,17 +119,17 @@ class InvoiceScreen extends StatelessWidget {
                 // Table
                 Table(
                   border: TableBorder.all(color: Colors.grey),
-                  columnWidths: {
-                    0: FlexColumnWidth(2),
-                    1: FlexColumnWidth(1),
-                    2: FlexColumnWidth(1),
-                    3: FlexColumnWidth(1),
+                  columnWidths: const {
+                    0: const FlexColumnWidth(2),
+                    1: const FlexColumnWidth(1),
+                    2: const FlexColumnWidth(1),
+                    3: const FlexColumnWidth(1),
                   },
                   children: [
                     // Header Row
                     TableRow(
                       decoration: BoxDecoration(color: Colors.grey.shade200),
-                      children: [
+                      children: const [
                         Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text('Item',
@@ -155,39 +157,39 @@ class InvoiceScreen extends StatelessWidget {
                       return TableRow(
                         children: [
                           Padding(
-                            padding: EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(8.0),
                             child: Text(item['item']),
                           ),
                           Padding(
-                            padding: EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(8.0),
                             child: Text(
                                 '${item['amountPerUnit'].toStringAsFixed(2)}'),
                           ),
                           Padding(
-                            padding: EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(8.0),
                             child: Text(item['weight']),
                           ),
                           Padding(
-                            padding: EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(8.0),
                             child: Text('${item['amount'].toStringAsFixed(2)}'),
                           ),
                         ],
                       );
-                    }).toList(),
+                    }),
                     // Total Row
                     TableRow(
                       children: [
-                        Padding(
+                        const Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text('Total Amount',
                               style: TextStyle(fontWeight: FontWeight.bold)),
                         ),
-                        Padding(padding: EdgeInsets.all(8.0), child: Text('')),
-                        Padding(padding: EdgeInsets.all(8.0), child: Text('')),
+                        const Padding(padding: EdgeInsets.all(8.0), child: Text('')),
+                        const Padding(padding: EdgeInsets.all(8.0), child: Text('')),
                         Padding(
-                          padding: EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Text(
-                              '${calculateTotalAmount().toStringAsFixed(2)}'),
+                              calculateTotalAmount().toStringAsFixed(2)),
                         ),
                       ],
                     ),
@@ -195,14 +197,14 @@ class InvoiceScreen extends StatelessWidget {
                 ),
                 SizedBox(height: screenHeight * 0.02),
                 // Payment Due Date
-                Text('Payment Due By: March 15, 2025'),
+                const Text('Payment Due By: March 15, 2025'),
                 SizedBox(height: screenHeight * 0.02),
                 // Contact Information
                 Text(
                   'For any Questions, please contact Agrimart agent at agrimart@gmail.com',
                   style: TextStyle(fontSize: 12, color: Colors.grey.shade600),
                 ),
-                Spacer(),
+                const Spacer(),
                 Center(
                   child: ElevatedButton(
                     onPressed: () {
@@ -214,8 +216,8 @@ class InvoiceScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(8), // radius
                       ),
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
+                    child: const Padding(
+                      padding: EdgeInsets.symmetric(
                           horizontal: 32.0, vertical: 16.0),
                       child:
                           Text('Done', style: TextStyle(color: Colors.black)),

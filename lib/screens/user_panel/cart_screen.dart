@@ -6,6 +6,8 @@ import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class CartScreen extends StatefulWidget {
+  const CartScreen({super.key});
+
   @override
   _CartScreenState createState() => _CartScreenState();
 }
@@ -15,7 +17,7 @@ class ProductCard extends StatelessWidget {
   final String productName;
   final String price;
 
-  const ProductCard({
+  const ProductCard({super.key, 
     required this.imageUrl,
     required this.productName,
     required this.price,
@@ -27,8 +29,8 @@ class ProductCard extends StatelessWidget {
       children: [
         Image.asset(imageUrl, width: 100, height: 100),
         Text(productName,
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-        Text(price, style: TextStyle(fontSize: 14, color: Colors.grey)),
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+        Text(price, style: const TextStyle(fontSize: 14, color: Colors.grey)),
       ],
     );
   }
@@ -112,7 +114,7 @@ class _CartScreenState extends State<CartScreen> {
           padding: const EdgeInsets.all(12.0),
           child: Column(
             children: [
-              CustomAppBar(),
+              const CustomAppBar(),
               SizedBox(
                 height: screenHeight * 0.03,
               ),

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 class AddNewItemScreen extends StatefulWidget {
-   AddNewItemScreen({super.key});
+   const AddNewItemScreen({super.key});
 
   @override
   State<AddNewItemScreen> createState() => _AddNewItemScreenState();
@@ -59,7 +59,7 @@ class _AddNewItemScreenState extends State<AddNewItemScreen> {
                   Positioned(
                     top: 100,
                     left: MediaQuery.of(context).size.width / 2 - 75,
-                    child: Text("Add New Item",
+                    child: const Text("Add New Item",
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
@@ -94,16 +94,16 @@ class _AddNewItemScreenState extends State<AddNewItemScreen> {
                                     radius: screenHeight * 0.05,
                                     backgroundColor:
                                         Colors.green.withOpacity(0.4),
-                                    child: Icon(Icons.image,
+                                    child: const Icon(Icons.image,
                                         size: 40, color: Colors.green),
                                   ),
                                   SizedBox(height: screenHeight * 0.01),
-                                  Text(
+                                  const Text(
                                     "Click to upload image",
                                     style: TextStyle(
                                         fontSize: 14, color: Colors.green),
                                   ),
-                                  Text(
+                                  const Text(
                                     "JPG, PNG (2 MB max)",
                                     style: TextStyle(
                                         fontSize: 12, color: Colors.grey),

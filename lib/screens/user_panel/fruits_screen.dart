@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 
 class FruitsScreen extends StatefulWidget {
+  const FruitsScreen({super.key});
+
   @override
   State<FruitsScreen> createState() => _FruitsScreenState();
 }
@@ -79,11 +81,11 @@ class ProductCard extends StatelessWidget {
   final String price;
 
   const ProductCard({
-    Key? key,
+    super.key,
     required this.imageUrl,
     required this.productName,
     required this.price,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

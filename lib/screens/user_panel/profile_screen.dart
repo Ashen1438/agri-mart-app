@@ -5,6 +5,8 @@ import 'package:agri_mart/constants/bg_ellipse.dart';
 import 'package:get/get.dart';
 
 class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
+
   Future<Map<String, dynamic>?> _fetchUserData() async {
     try {
       User? currentUser = FirebaseAuth.instance.currentUser;
@@ -63,7 +65,7 @@ class ProfileScreen extends StatelessWidget {
               Stack(
                 clipBehavior: Clip.none,
                 children: [
-                  BgEllipse(),
+                  const BgEllipse(),
                   Positioned(
                     top: 50,
                     left: 16,
@@ -119,9 +121,9 @@ class ProfileScreen extends StatelessWidget {
                           color: Colors.grey[200],
                           borderRadius: BorderRadius.circular(16),
                         ),
-                        child: Column(
+                        child: const Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
+                          children: [
                             Icon(Icons.shopping_bag,
                                 color: Colors.yellow, size: 40),
                             SizedBox(height: 8),
@@ -153,9 +155,9 @@ class ProfileScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        child: Column(
+                        child: const Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
+                          children: [
                             Icon(Icons.add_shopping_cart,
                                 color: Colors.blue, size: 40),
                             SizedBox(height: 8),

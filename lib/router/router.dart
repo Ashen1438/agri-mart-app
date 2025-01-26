@@ -60,7 +60,7 @@ class RouterClass {
         GetPage(
             name: '/user_panel/add_new_item_screen',
             page: () => AddNewItemScreen()),
-        GetPage(name: '/user_panel/order_history', page: () => OrderHistory()),
+        GetPage(name: '/user_panel/order_history', page: () => const OrderHistory()),
         GetPage(
             name: '/user_panel/notification', page: () => NotificationScreen()),
       ];

@@ -35,6 +35,8 @@ class MessageSection extends StatelessWidget {
     },
   ];
 
+  MessageSection({super.key});
+
   @override
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
@@ -45,7 +47,7 @@ class MessageSection extends StatelessWidget {
           Stack(
             clipBehavior: Clip.none,
             children: [
-              BgEllipse(),
+              const BgEllipse(),
               Positioned(
                 top: 50,
                 left: 16,
@@ -65,7 +67,7 @@ class MessageSection extends StatelessWidget {
                 right: 0,
                 child: Center(
                   child: Container(
-                    padding: EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(8),
                     color: Colors.grey[200],
                     height: 120,
                     child: ListView.builder(
@@ -86,14 +88,15 @@ class MessageSection extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: screenHeight*0.05), 
+          SizedBox(height: screenHeight * 0.05),
           // Conversation List
           Expanded(
             child: ListView.builder(
               itemCount: conversations.length,
               itemBuilder: (context, index) {
                 return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 16.0, vertical: 8.0),
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16),
@@ -105,12 +108,12 @@ class MessageSection extends StatelessWidget {
                         IconButton(
                           icon: const Icon(Icons.message, color: Colors.green),
                           onPressed: () {
-                          Get.toNamed('/user_panel/chat');
+                            Get.toNamed('/user_panel/chat');
                           },
                         ),
                         const SizedBox(width: 16),
                         GestureDetector(
-                          onTap: (){
+                          onTap: () {
                             Get.toNamed('/user_panel/chat');
                           },
                           child: Column(
