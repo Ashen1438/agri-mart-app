@@ -9,55 +9,53 @@ class BottomNavBarScreen extends StatefulWidget {
 }
 
 class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
-  int _currentIndex = 1; 
+  int _currentIndex = 1;
 
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
+      currentIndex: _currentIndex,
+      onTap: (index) {
+        setState(() {
+          _currentIndex = index;
+        });
 
-          switch (index) {
-      case 0:
-        Get.toNamed('/user_panel/message');
-        break;
-      case 1:
-        Get.toNamed('/home');
-        break;
-      case 2:
-        Get.toNamed('/user_panel/orders');
-        break;
-      case 3:
-        Get.toNamed('/user_panel/category');
-        break;
-    }
-        },
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.green,
-        unselectedItemColor: Colors.grey,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.message),
-            label: "Message",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: "Home",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.list_alt),
-            label: "Orders",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.category),
-            label: "Category",
-          ),
-        ],
-      
+        switch (index) {
+          case 0:
+            Get.toNamed('/user_panel/message');
+            break;
+          case 1:
+            Get.toNamed('/home');
+            break;
+          case 2:
+            Get.toNamed('/user_panel/order_history');
+            break;
+          case 3:
+            Get.toNamed('/user_panel/profile');
+            break;
+        }
+      },
+      type: BottomNavigationBarType.fixed,
+      selectedItemColor: Colors.green,
+      unselectedItemColor: Colors.grey,
+      items: const [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.message),
+          label: "Message",
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home),
+          label: "Home",
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.list_alt),
+          label: "Orders",
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.person),
+          label: "Profile",
+        ),
+      ],
     );
   }
 }
-

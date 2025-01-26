@@ -49,7 +49,7 @@ class _TodayPriceState extends State<TodayPrice> {
               physics: const NeverScrollableScrollPhysics(), // Prevent scroll conflict
               padding: const EdgeInsets.all(10),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, // 3 items per row
+                crossAxisCount: 3, // 3 items per row
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
                 childAspectRatio: 3 / 4, // Adjust card aspect ratio

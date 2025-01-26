@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:agri_mart/constants/bg_ellipse.dart';
+import 'package:get/get.dart';
 
 class ProfileScreen extends StatelessWidget {
   Future<Map<String, dynamic>?> _fetchUserData() async {
     try {
       User? currentUser = FirebaseAuth.instance.currentUser;
       if (currentUser != null) {
-        DocumentSnapshot<Map<String, dynamic>> userDoc = await FirebaseFirestore.instance
+        DocumentSnapshot<Map<String, dynamic>> userDoc = await FirebaseFirestore
+            .instance
             .collection('users')
             .doc(currentUser.uid)
             .get();
@@ -135,7 +137,7 @@ class ProfileScreen extends StatelessWidget {
                     ),
                     GestureDetector(
                       onTap: () {
-                        // Navigate to Favourites Page
+                        Get.toNamed('/user_panel/add_new_item_screen');
                       },
                       child: Container(
                         width: screenWidth * 0.35,
@@ -154,10 +156,10 @@ class ProfileScreen extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
-                            Icon(Icons.favorite,
+                            Icon(Icons.add_shopping_cart,
                                 color: Colors.blue, size: 40),
                             SizedBox(height: 8),
-                            Text('Favourites',
+                            Text('Add Items',
                                 style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,

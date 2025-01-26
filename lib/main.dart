@@ -2,10 +2,13 @@ import 'package:agri_mart/router/router.dart';
 import 'package:agri_mart/screens/get_started.dart';
 import 'package:agri_mart/screens/user_panel/cart_screen.dart';
 import 'package:agri_mart/screens/user_panel/chat_screen.dart';
+import 'package:agri_mart/screens/user_panel/home.dart';
 import 'package:agri_mart/screens/user_panel/message_section.dart';
 import 'package:agri_mart/screens/user_panel/order_confirmation_screen.dart';
+import 'package:agri_mart/screens/user_panel/others_screen.dart';
 import 'package:agri_mart/screens/user_panel/product_detail_screen.dart';
 import 'package:agri_mart/screens/user_panel/profile_screen.dart';
+import 'package:agri_mart/screens/user_panel/vegetables_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -28,7 +31,7 @@ class AgriMart extends StatelessWidget {
         fontFamily: "Poppins",
       ),
       debugShowCheckedModeBanner: false,
-      home: GetStarted(),
+      //home: ProfileScreen(),
       initialRoute: '/',
       getPages: RouterClass().routes,
       unknownRoute: GetPage(

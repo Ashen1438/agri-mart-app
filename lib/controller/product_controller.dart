@@ -18,7 +18,6 @@ class ProductController extends GetxController {
   void onInit() {
     super.onInit();
     fetchProducts(); // Call to load products on initialization
-    
   }
 
   void fetchProducts() async {
@@ -30,8 +29,8 @@ class ProductController extends GetxController {
       // Simulated fetched data
       var fetchedProducts = [
         Product(
-          name: 'Potato',
-          imageUrl: 'assets/product/potato.png',
+          name: 'Grapes',
+          imageUrl: 'assets/product/Grapes.png',
           price: '240.00',
         ),
         Product(
@@ -40,8 +39,13 @@ class ProductController extends GetxController {
           price: '240.00',
         ),
         Product(
-          name: 'Potato',
+          name: 'beans',
           imageUrl: 'assets/product/beans.png',
+          price: '240.00',
+        ),
+        Product(
+          name: 'Watermelon',
+          imageUrl: 'assets/product/Watermelon.png',
           price: '240.00',
         ),
         Product(
@@ -49,8 +53,11 @@ class ProductController extends GetxController {
           imageUrl: 'assets/product/potato.png',
           price: '240.00',
         ),
-        
-        
+        Product(
+          name: 'Banana',
+          imageUrl: 'assets/product/Banana.png',
+          price: '240.00',
+        ),
       ];
 
       productList.value = fetchedProducts; // Update product list

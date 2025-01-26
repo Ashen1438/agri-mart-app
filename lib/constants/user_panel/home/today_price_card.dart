@@ -36,7 +36,7 @@ class ProductCard extends StatelessWidget {
         children: [
           // Image at the top
           Positioned(
-            top: 0,
+            top: -10,
             left: 0,
             right: 0,
             child: ClipRRect(
@@ -45,7 +45,7 @@ class ProductCard extends StatelessWidget {
               ),
               child: Image.asset(
                 imageUrl,
-                height: 120,
+                height: 100,
                 fit: BoxFit.cover,
               ),
             ),
@@ -59,7 +59,7 @@ class ProductCard extends StatelessWidget {
             child: ClipPath(
               clipper: BottomCurveClipper(),
               child: Container(
-                height: 100,
+                height: 90,
                 color: Colors.grey.shade300,
               ),
             ),
@@ -67,7 +67,7 @@ class ProductCard extends StatelessWidget {
 
           // Product details positioned within the gray section
           Positioned(
-            bottom: 20,
+            bottom: 5,
             left: 20,
             right: 20,
             child: Column(
@@ -76,7 +76,7 @@ class ProductCard extends StatelessWidget {
                   productName,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 16,
+                    fontSize: 12,
                   ),
                 ),
                 const SizedBox(height: 5),

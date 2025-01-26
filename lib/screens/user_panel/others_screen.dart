@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class OthersScreen extends StatefulWidget {
@@ -9,18 +8,51 @@ class OthersScreen extends StatefulWidget {
 class _OthersScreenState extends State<OthersScreen> {
   // Sample data for the grid
   final List<Map<String, String>> products = [
-    {'name': 'Potato', 'price': '240.00', 'image': 'assets/product/potato.png'},
-    {'name': 'Beans', 'price': '340.00', 'image': 'assets/product/beans.png'},
-    {'name': 'Carrot', 'price': '140.00', 'image': 'assets/product/carrot.png'},
-    {'name': 'Watermelon', 'price': '240.00', 'image': 'assets/product/watermelon.png'},
-    {'name': 'Banana', 'price': '240.00', 'image': 'assets/product/banana.png'},
-    {'name': 'Grapes', 'price': '240.00', 'image': 'assets/product/grapes.png'},
-    {'name': 'Potato', 'price': '240.00', 'image': 'assets/product/potato.png'},
-    {'name': 'Beans', 'price': '340.00', 'image': 'assets/product/beans.png'},
-    {'name': 'Carrot', 'price': '140.00', 'image': 'assets/product/carrot.png'},
-    {'name': 'Watermelon', 'price': '240.00', 'image': 'assets/product/watermelon.png'},
-    {'name': 'Banana', 'price': '240.00', 'image': 'assets/product/banana.png'},
-    {'name': 'Grapes', 'price': '240.00', 'image': 'assets/product/grapes.png'},
+    {
+      'name': 'fertilizer',
+      'price': '260.00',
+      'image': 'assets/others/fertilizer.png'
+    },
+    {
+      'name': 'gardening tool',
+      'price': '450.00',
+      'image': 'assets/others/gardening_tool.png'
+    },
+    {
+      'name': 'seed drill machine',
+      'price': '100 000.00',
+      'image': 'assets/others/seed_drill_machine.png'
+    },
+    {
+      'name': 'fertilizer',
+      'price': '240.00',
+      'image': 'assets/others/fertilizer.png'
+    },
+    {
+      'name': 'fertilizer',
+      'price': '120.00',
+      'image': 'assets/others/Fertilizer_1.png'
+    },
+    {
+      'name': 'Spray machine',
+      'price': '250.00',
+      'image': 'assets/others/Spray_machine.png'
+    },
+    {
+      'name': 'machine',
+      'price': '340.00',
+      'image': 'assets/others/machine.png'
+    },
+    {
+      'name': 'fertilizer',
+      'price': '220.00',
+      'image': 'assets/others/Fertilizer_2.png'
+    },
+    {
+      'name': 'fertilizer',
+      'price': '300.00',
+      'image': 'assets/others/Fertilizer_3.png'
+    },
   ];
 
   @override
@@ -48,7 +80,8 @@ class _OthersScreenState extends State<OthersScreen> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: SizedBox(
-          height: MediaQuery.of(context).size.height, // Ensures GridView has height
+          height:
+              MediaQuery.of(context).size.height, // Ensures GridView has height
           child: GridView.builder(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3, // Number of columns
@@ -64,7 +97,6 @@ class _OthersScreenState extends State<OthersScreen> {
                 productName: product['name'] ?? '',
                 price: product['price'] ?? '',
               );
-              
             },
           ),
         ),
@@ -98,11 +130,13 @@ class ProductCard extends StatelessWidget {
             width: 80,
             fit: BoxFit.cover,
             errorBuilder: (context, error, stackTrace) {
-              return const Icon(Icons.broken_image, size: 80, color: Colors.grey);
+              return const Icon(Icons.broken_image,
+                  size: 80, color: Colors.grey);
             },
           ),
           const SizedBox(height: 10),
-          Text(productName, style: const TextStyle(fontWeight: FontWeight.bold)),
+          Text(productName,
+              style: const TextStyle(fontWeight: FontWeight.bold)),
           Text('Rs. $price', style: const TextStyle(color: Colors.green)),
         ],
       ),
