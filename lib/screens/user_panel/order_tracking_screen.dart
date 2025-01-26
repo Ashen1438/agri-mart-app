@@ -13,13 +13,13 @@ class _OrderTrackingScreenState extends State<OrderTrackingScreen> {
 
   // Initial position for the map
   final LatLng _initialPosition =
-      const LatLng(37.7749, -122.4194); // Example: San Francisco
+      const LatLng(6.98273, 81.07685); // Coordinates of uva wellassa univercity Badulla, Sri Lanka
 
   // Example delivery route
   final List<LatLng> _deliveryRoute = [
-    const LatLng(37.7749, -122.4194), // Start point
-    const LatLng(37.7849, -122.4094), // Midpoint
-    const LatLng(37.7949, -122.3994), // Destination
+    const LatLng(6.9896, 81.0551), // Start point (Badulla)
+    const LatLng(6.9946, 81.0491), // Midpoint
+    const LatLng(6.9980, 81.0421), // Destination
   ];
 
   Set<Polyline> _createRoute() {
