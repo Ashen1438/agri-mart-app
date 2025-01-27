@@ -6,20 +6,8 @@ class InvoiceScreen extends StatelessWidget {
     {
       'item': 'Carrot',
       'amountPerUnit': 240.00,
-      'weight': '1Kg',
-      'amount': 240.00,
-    },
-    {
-      'item': 'Beans',
-      'amountPerUnit': 240.00,
-      'weight': '1Kg',
-      'amount': 240.00,
-    },
-    {
-      'item': 'Potato',
-      'amountPerUnit': 240.00,
-      'weight': '1Kg',
-      'amount': 240.00,
+      'weight': '2Kg',
+      'amount': 480.00,
     },
   ];
 

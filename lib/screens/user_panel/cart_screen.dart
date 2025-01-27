@@ -17,7 +17,8 @@ class ProductCard extends StatelessWidget {
   final String productName;
   final String price;
 
-  const ProductCard({super.key, 
+  const ProductCard({
+    super.key,
     required this.imageUrl,
     required this.productName,
     required this.price,
@@ -42,24 +43,6 @@ class _CartScreenState extends State<CartScreen> {
         name: 'Carrot',
         image: 'assets/product/carrot.png',
         price: 240.00,
-        weight: '1 kg',
-        quantity: 1),
-    CartItem(
-        name: 'Beans',
-        image: 'assets/product/beans.png',
-        price: 200.00,
-        weight: '1 kg',
-        quantity: 1),
-    CartItem(
-        name: 'Potato',
-        image: 'assets/product/potato.png',
-        price: 180.00,
-        weight: '1 kg',
-        quantity: 1),
-    CartItem(
-        name: 'Beans',
-        image: 'assets/product/beans.png',
-        price: 210.00,
         weight: '1 kg',
         quantity: 1),
   ];
