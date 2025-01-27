@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class VegetablesScreen extends StatefulWidget {
   const VegetablesScreen({super.key});
@@ -14,15 +14,39 @@ class _VegetablesScreenState extends State<VegetablesScreen> {
     {'name': 'Potato', 'price': '240.00', 'image': 'assets/product/potato.png'},
     {'name': 'Beans', 'price': '340.00', 'image': 'assets/product/beans.png'},
     {'name': 'Carrot', 'price': '140.00', 'image': 'assets/product/carrot.png'},
-    {'name': 'Watermelon', 'price': '240.00', 'image': 'assets/product/watermelon.png'},
-    {'name': 'Banana', 'price': '240.00', 'image': 'assets/product/banana.png'},
-    {'name': 'Grapes', 'price': '240.00', 'image': 'assets/product/grapes.png'},
-    {'name': 'Potato', 'price': '240.00', 'image': 'assets/product/potato.png'},
-    {'name': 'Beans', 'price': '340.00', 'image': 'assets/product/beans.png'},
+    {'name': 'Onion', 'price': '240.00', 'image': 'assets/productU/onion.png'},
+    {'name': 'Leek', 'price': '240.00', 'image': 'assets/product/leek.png.png'},
+    {
+      'name': 'Pumpkin',
+      'price': '240.00',
+      'image': 'assets/product/pumpkin.png'
+    },
+    {
+      'name': 'Cauliflower',
+      'price': '240.00',
+      'image': 'assets/product/cauliflower.png'
+    },
+    {
+      'name': 'Beetroot',
+      'price': '340.00',
+      'image': 'assets/product/beetroot.png'
+    },
     {'name': 'Carrot', 'price': '140.00', 'image': 'assets/product/carrot.png'},
-    {'name': 'Watermelon', 'price': '240.00', 'image': 'assets/product/watermelon.png'},
-    {'name': 'Banana', 'price': '240.00', 'image': 'assets/product/banana.png'},
-    {'name': 'Grapes', 'price': '240.00', 'image': 'assets/product/grapes.png'},
+    {
+      'name': 'Saaraketha',
+      'price': '240.00',
+      'image': 'assets/product/saaraketha.png'
+    },
+    {
+      'name': 'Premium',
+      'price': '240.00',
+      'image': 'assets/product/premium.png'
+    },
+    {
+      'name': 'Momordica',
+      'price': '240.00',
+      'image': 'assets/product/momordica.png'
+    },
   ];
 
   @override
@@ -50,7 +74,8 @@ class _VegetablesScreenState extends State<VegetablesScreen> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: SizedBox(
-          height: MediaQuery.of(context).size.height, // Ensures GridView has height
+          height:
+              MediaQuery.of(context).size.height, // Ensures GridView has height
           child: GridView.builder(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3, // Number of columns
@@ -66,7 +91,6 @@ class _VegetablesScreenState extends State<VegetablesScreen> {
                 productName: product['name'] ?? '',
                 price: product['price'] ?? '',
               );
-              
             },
           ),
         ),
@@ -89,24 +113,31 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 4,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(
-            imageUrl,
-            height: 80,
-            width: 80,
-            fit: BoxFit.cover,
-            errorBuilder: (context, error, stackTrace) {
-              return const Icon(Icons.broken_image, size: 80, color: Colors.grey);
-            },
-          ),
-          const SizedBox(height: 10),
-          Text(productName, style: const TextStyle(fontWeight: FontWeight.bold)),
-          Text('Rs. $price', style: const TextStyle(color: Colors.green)),
-        ],
+    return GestureDetector(
+      onTap: () {
+        Get.toNamed('/user_panel/product');
+      },
+      child: Card(
+        elevation: 4,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              imageUrl,
+              height: 80,
+              width: 80,
+              fit: BoxFit.cover,
+              errorBuilder: (context, error, stackTrace) {
+                return const Icon(Icons.broken_image,
+                    size: 80, color: Colors.grey);
+              },
+            ),
+            const SizedBox(height: 10),
+            Text(productName,
+                style: const TextStyle(fontWeight: FontWeight.bold)),
+            Text('Rs. $price', style: const TextStyle(color: Colors.green)),
+          ],
+        ),
       ),
     );
   }

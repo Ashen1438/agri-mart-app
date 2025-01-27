@@ -1,16 +1,18 @@
+import 'package:agri_mart/constants/user_panel/bottom_nav_bar.dart';
 import 'package:agri_mart/constants/user_panel/custom_app_bar.dart';
 import 'package:agri_mart/constants/user_panel/home/today_price_card.dart';
 import 'package:agri_mart/controller/product_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class ProductDetailScreen extends StatefulWidget {
-  const ProductDetailScreen({super.key});
+class ProductDetail extends StatefulWidget {
+  const ProductDetail({super.key});
 
   @override
-  _ProductDetailScreenState createState() => _ProductDetailScreenState();
+  _ProductDetailState createState() => _ProductDetailState();
 }
 
-class _ProductDetailScreenState extends State<ProductDetailScreen> {
+class _ProductDetailState extends State<ProductDetail> {
   int quantity = 1;
 
   @override
@@ -128,8 +130,11 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                                 ),
                                 onPressed: () {
                                   // Add to cart logic
+                                  Get.toNamed('/user_panel/cart');
                                 },
-                                child: const Text('Add to Cart'),
+                                child: const Text('Add to Cart',
+                                    style: TextStyle(
+                                        fontSize: 14, color: Colors.black)),
                               ),
                             ],
                           ),
@@ -210,6 +215,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
           ),
         ),
       ),
+      bottomNavigationBar: BottomNavBarScreen(),
     );
   }
 }
@@ -236,7 +242,7 @@ class ReviewCard extends StatelessWidget {
                 index < 2
                     ? Icons.star
                     : Icons.star_border, // 4 stars and 1 empty
-                color: Colors.green,size: 18,
+                color: Colors.green, size: 18,
               );
             }),
           ),
@@ -260,7 +266,7 @@ class SellerSection extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(10.0),
       height: screenHeight * 0.2,
-      width: screenWidth*0.9,
+      width: screenWidth * 0.9,
       decoration: BoxDecoration(
         color: Colors.grey[200],
         borderRadius: BorderRadius.circular(16),
@@ -291,9 +297,12 @@ class SellerSection extends StatelessWidget {
           ),
           const SizedBox(width: 8),
           SizedBox(
-            width: screenWidth * 0.28,
-            height: screenHeight * 0.28,
-            child: const ProductCard(imageUrl: 'assets/product/beans.png', productName: 'Beans', price: ''))
+              width: screenWidth * 0.28,
+              height: screenHeight * 0.28,
+              child: const ProductCard(
+                  imageUrl: 'assets/product/beans.png',
+                  productName: 'Beans',
+                  price: ''))
         ],
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class InvoiceScreen extends StatelessWidget {
   final List<Map<String, dynamic>> orderItems = [
@@ -22,7 +23,7 @@ class InvoiceScreen extends StatelessWidget {
     },
   ];
 
-   InvoiceScreen({super.key});
+  InvoiceScreen({super.key});
 
   double calculateTotalAmount() {
     return orderItems.fold(0, (sum, item) => sum + item['amount']);
@@ -184,12 +185,14 @@ class InvoiceScreen extends StatelessWidget {
                           child: Text('Total Amount',
                               style: TextStyle(fontWeight: FontWeight.bold)),
                         ),
-                        const Padding(padding: EdgeInsets.all(8.0), child: Text('')),
-                        const Padding(padding: EdgeInsets.all(8.0), child: Text('')),
+                        const Padding(
+                            padding: EdgeInsets.all(8.0), child: Text('')),
+                        const Padding(
+                            padding: EdgeInsets.all(8.0), child: Text('')),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                              calculateTotalAmount().toStringAsFixed(2)),
+                          child:
+                              Text(calculateTotalAmount().toStringAsFixed(2)),
                         ),
                       ],
                     ),
@@ -209,6 +212,7 @@ class InvoiceScreen extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {
                       // Add your onPressed code here!
+                      Get.toNamed('/user_panel/order_confirmation');
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.green, // background color

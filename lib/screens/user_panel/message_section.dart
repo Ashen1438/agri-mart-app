@@ -5,11 +5,11 @@ import 'package:get/get.dart';
 
 class MessageSection extends StatelessWidget {
   final List<String> profileImages = [
-    'assets/profile/profile1.png',
-    'assets/profile/profile1.png',
-    'assets/profile/profile1.png',
-    'assets/profile/profile1.png',
-    'assets/profile/profile1.png',
+    'assets/profile/prishika.jpg',
+    'assets/profile/hansika.jpg',
+    'assets/profile/uditha.jpg',
+    'assets/profile/ashen.jpg',
+    'assets/profile/sachintha.jpg',
   ];
 
   final List<Map<String, String>> conversations = [
@@ -78,7 +78,9 @@ class MessageSection extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(horizontal: 8.0),
                           child: CircleAvatar(
                             radius: 40,
-                            backgroundImage: AssetImage(profileImages[index]),
+                            backgroundImage: AssetImage(
+                                profileImages[index],
+                            ),
                           ),
                         );
                       },

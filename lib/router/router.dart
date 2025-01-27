@@ -15,6 +15,7 @@ import 'package:agri_mart/screens/user_panel/order_histry.dart';
 import 'package:agri_mart/screens/user_panel/order_tracking_screen.dart';
 import 'package:agri_mart/screens/user_panel/others_screen.dart';
 import 'package:agri_mart/screens/user_panel/payment_screen.dart';
+import 'package:agri_mart/screens/user_panel/product_detail_screen.dart';
 import 'package:agri_mart/screens/user_panel/product_screen.dart';
 import 'package:agri_mart/screens/user_panel/profile_screen.dart';
 import 'package:agri_mart/screens/user_panel/todays_price_screen.dart';
@@ -60,8 +61,12 @@ class RouterClass {
         GetPage(
             name: '/user_panel/add_new_item_screen',
             page: () => AddNewItemScreen()),
-        GetPage(name: '/user_panel/order_history', page: () => const OrderHistory()),
+        GetPage(
+            name: '/user_panel/order_history',
+            page: () => const OrderHistory()),
         GetPage(
             name: '/user_panel/notification', page: () => NotificationScreen()),
+        GetPage(
+            name: '/user_panel/product_detail', page: () => ProductDetail()),
       ];
 }

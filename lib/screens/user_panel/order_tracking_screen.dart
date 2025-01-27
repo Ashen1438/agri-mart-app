@@ -1,3 +1,4 @@
+import 'package:agri_mart/constants/user_panel/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -12,8 +13,8 @@ class _OrderTrackingScreenState extends State<OrderTrackingScreen> {
   late GoogleMapController mapController;
 
   // Initial position for the map
-  final LatLng _initialPosition =
-      const LatLng(6.98273, 81.07685); // Coordinates of uva wellassa univercity Badulla, Sri Lanka
+  final LatLng _initialPosition = const LatLng(6.98273,
+      81.07685); // Coordinates of uva wellassa univercity Badulla, Sri Lanka
 
   // Example delivery route
   final List<LatLng> _deliveryRoute = [
@@ -104,6 +105,7 @@ class _OrderTrackingScreenState extends State<OrderTrackingScreen> {
           ),
         ],
       ),
+      bottomNavigationBar: BottomNavBarScreen(),
     );
   }
 

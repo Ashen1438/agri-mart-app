@@ -1,5 +1,7 @@
 import 'package:agri_mart/constants/bg_ellipse.dart';
+import 'package:agri_mart/constants/user_panel/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class OrderHistory extends StatefulWidget {
   const OrderHistory({super.key});
@@ -73,7 +75,7 @@ class _OrderHistoryState extends State<OrderHistory> {
                   status: data['status'],
                   amount: data['amount'],
                   onTrackOrder: () {
-                    // Navigate to tracking screen or show tracking info
+                    Get.toNamed('/user_panel/odertrack');
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text("Tracking order: ${data['orderNumber']}"),
@@ -86,6 +88,7 @@ class _OrderHistoryState extends State<OrderHistory> {
           ),
         ],
       ),
+      bottomNavigationBar: BottomNavBarScreen(),
     );
   }
 }
@@ -112,7 +115,6 @@ class OrderHistoryCard extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           color: Colors.grey.withOpacity(0.1),
-          
         ),
         padding: const EdgeInsets.all(20),
         child: Column(

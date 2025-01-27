@@ -121,19 +121,24 @@ class ProfileScreen extends StatelessWidget {
                           color: Colors.grey[200],
                           borderRadius: BorderRadius.circular(16),
                         ),
-                        child: const Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.shopping_bag,
-                                color: Colors.yellow, size: 40),
-                            SizedBox(height: 8),
-                            Text('Orders',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
-                                )),
-                          ],
+                        child: GestureDetector(
+                          onTap: () {
+                            Get.toNamed('/user_panel/order_history');
+                          },
+                          child: const Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.shopping_bag,
+                                  color: Colors.yellow, size: 40),
+                              SizedBox(height: 8),
+                              Text('Orders',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                  )),
+                            ],
+                          ),
                         ),
                       ),
                     ),

@@ -77,6 +77,12 @@ flutter:
     - assets/sellers/
     - assets/others/
     - assets/profile/
+    # Profile images:
+    - assets/profile/prishika.jpg
+    - assets/profile/hansika.jpg
+    - assets/profile/uditha.jpg
+    - assets/profile/ashen.jpg
+    - assets/profile/sachintha.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

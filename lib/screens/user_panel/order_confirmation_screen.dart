@@ -105,7 +105,7 @@ class OrderConfirmationScreen extends StatelessWidget {
                 // Continue Shopping Button
                 ElevatedButton(
                   onPressed: () {
-                    // Navigate to Track Order screen
+                    Get.toNamed('/home');
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.green,

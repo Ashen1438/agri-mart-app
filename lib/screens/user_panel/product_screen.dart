@@ -1,6 +1,8 @@
+import 'package:agri_mart/constants/user_panel/bottom_nav_bar.dart';
 import 'package:agri_mart/constants/user_panel/custom_app_bar.dart';
 import 'package:agri_mart/constants/user_panel/home/today_price_card.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ProductScreen extends StatelessWidget {
   final sellers = [
@@ -30,7 +32,7 @@ class ProductScreen extends StatelessWidget {
     },
   ];
 
-   ProductScreen({super.key});
+  ProductScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -52,9 +54,13 @@ class ProductScreen extends StatelessWidget {
                         children: [
                           const CustomAppBar(),
                           SizedBox(height: screenHeight * 0.02),
-                          const Text("Carrot", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                          // Product Image
-                           const ProductCard(imageUrl: 'assets/product/carrot.png', productName: 'Carrot', price: ''),
+                          const Text("Carrot",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold)),
+                          const ProductCard(
+                              imageUrl: 'assets/product/carrot.png',
+                              productName: 'Carrot',
+                              price: ''),
                         ],
                       ),
                     ),
@@ -62,7 +68,7 @@ class ProductScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: screenHeight * 0.02),
-          
+
               // Sellers List Section
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -71,11 +77,16 @@ class ProductScreen extends StatelessWidget {
                   children: sellers.map((seller) {
                     return Padding(
                       padding: const EdgeInsets.only(bottom: 16.0),
-                      child: SellerCard(
-                        name: seller['name']!,
-                        location: seller['location']!,
-                        stock: seller['stock']!,
-                        price: seller['price']!,
+                      child: GestureDetector(
+                        onTap: () {
+                          Get.toNamed('/user_panel/product_detail');
+                        },
+                        child: SellerCard(
+                          name: seller['name']!,
+                          location: seller['location']!,
+                          stock: seller['stock']!,
+                          price: seller['price']!,
+                        ),
                       ),
                     );
                   }).toList(),
@@ -85,6 +96,7 @@ class ProductScreen extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: BottomNavBarScreen(),
     );
   }
 }
@@ -110,7 +122,6 @@ class SellerCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.grey[200],
         borderRadius: BorderRadius.circular(16),
-       
       ),
       child: Row(
         children: [
@@ -118,7 +129,11 @@ class SellerCard extends StatelessWidget {
           const CircleAvatar(
             radius: 25,
             backgroundColor: Colors.green,
-            child: Icon(Icons.person_2, color: Colors.white,size: 40,),
+            child: Icon(
+              Icons.person_2,
+              color: Colors.white,
+              size: 40,
+            ),
           ),
           const SizedBox(width: 12),
           // Seller Details
